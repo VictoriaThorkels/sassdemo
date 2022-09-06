@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/*variables for badding and borders to be used for multiple purposes*/
+/*this shows at what size the website layout should switch*/
+/*comment, alveg eins í javascript*/
+/*this mixin is named "desktop"*/
 body, html {
   height: 100%;
 }
@@ -5,6 +10,7 @@ body, html {
 body {
   font-family: "Poppins", sans-serif !important;
   margin: 0;
+  /*logo section*/
 }
 body #bg {
   clip-path: polygon(100% 0, 100% 75%, 53% 100%, 0 100%, 0 0);
@@ -26,6 +32,9 @@ body header a {
   display: block;
   text-transform: uppercase;
   font-weight: bolder;
+}
+body main {
+  /*how the websites main section will look when made larger*/
 }
 @media (min-width: 1000px) {
   body main {

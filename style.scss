@@ -4,22 +4,28 @@ $colors: (
     primary-dark: darken(#FFD166, 40%),
     primary4: black,
     accent: #EF476F 
-);
+); 
+
+@use './abstracts/colors';
 
 $padding: 15px;
 $borders: 15px;
+/*variables for badding and borders to be used for multiple purposes*/
 
 @function color($color-name){
     @return map-get($colors, $color-name)
 }
 
 $desktop: 1000px;
+/*this shows at what size the website layout should switch*/
+/*comment, alveg eins í javascript*/
 
-@mixin desktop {
+@mixin desktop { // mixin is used to creat a css code that is reused throughout the site
     @media (min-width: #{$desktop}) {
         @content; 
     }
 }
+/*this mixin is named "desktop"*/
 
 body, html{
     height: 100%;
@@ -27,7 +33,7 @@ body, html{
 }
 
 body {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important; // not sure if this font worked...
     margin: 0;
     
     #bg {
@@ -38,29 +44,29 @@ body {
         position: absolute;
         z-index: -1;
         
-        @include desktop {
+        @include desktop { // a include is used to include a mixin just by using the name of the mixin
             clip-path: polygon(0 0, 76% 0, 55% 100%, 0% 100%);
         }
     }
     header a {
-        color: #fff;
+        color: #fff; // #fff is a white color
         text-decoration: solid;
-        padding: $padding;
+        padding: $padding; // here I used the padding variable
         display: block;
-        text-transform: uppercase;
+        text-transform: uppercase; // to make everything in uppercase
         font-weight: bolder;
     }
+    /*logo section*/
 
     main {
-
-        @include desktop {
+        @include desktop { // mixin
             display: grid;
             grid-template-columns: 50% auto;
             grid-template-areas:
                 "primary card";
         }
+        /*how the websites main section will look when made larger*/
 
-       
         section#card {
             background: #fff;
             padding-left: 20px;
@@ -69,7 +75,7 @@ body {
             box-shadow: 0 10px 30px rgba(0,0,0,.2);
             width: 80%;
 
-            @include desktop {
+            @include desktop { // mixin
                 grid-area: card;
                 height: fit-content;
                 align-self: center;
@@ -107,7 +113,7 @@ body {
         padding: $padding;
         text-align: center;
 
-        @include desktop {
+        @include desktop { // mixin
             grid-area: primary;
             text-align: left;
             margin: 15em 0 0 7em;
@@ -119,7 +125,7 @@ body {
             margin-top: 10px;
             text-transform: uppercase;
 
-            @include desktop {
+            @include desktop { // mixin
                 width: 30%;
                 font-size: 4em;
                 line-height: .9em;
@@ -143,10 +149,10 @@ body {
             margin: 50px auto 0 auto0;
             padding: $padding;
 
-            @include desktop {
+            @include desktop { // mixin
                 display: inline-block;
                 padding: $padding $padding * 4;
             }
         }
-    }
-}
+        }
+    } 
