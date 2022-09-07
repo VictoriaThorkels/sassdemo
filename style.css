@@ -7,8 +7,16 @@ body, html {
   height: 100%;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("./Poppins/Poppins-Black.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./Poppins/Poppins-Bold.ttf") format("truetype");
+}
 body {
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Poppins";
   margin: 0;
   /*logo section*/
 }
@@ -125,6 +133,21 @@ body section#primary a {
     display: inline-block;
     padding: 15px 60px;
   }
+}
+body section#primary .button-basic, body section#primary .button-no, body section#primary .button-yes {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+body section#primary .button-yes {
+  font-family: "Poppins-Bold";
+  color: green;
+}
+body section#primary .button-no {
+  font-family: "Poppins-Bold";
+  color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

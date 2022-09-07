@@ -1,11 +1,3 @@
-$colors: (
-    primary: #FFD166,
-    primary4-light: lighten(black, 90%),
-    primary-dark: darken(#FFD166, 40%),
-    primary4: black,
-    accent: #EF476F 
-); 
-
 @use './abstracts/colors';
 
 $padding: 15px;
@@ -13,7 +5,7 @@ $borders: 15px;
 /*variables for badding and borders to be used for multiple purposes*/
 
 @function color($color-name){
-    @return map-get($colors, $color-name)
+    @return map-get(colors.$colors, $color-name)
 }
 
 $desktop: 1000px;
@@ -32,8 +24,16 @@ body, html{
 
 }
 
+@font-face {
+    font-family: 'Poppins';
+    src: url('./Poppins/Poppins-Black.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('./Poppins/Poppins-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
 body {
-    font-family: 'Poppins', sans-serif !important; // not sure if this font worked...
+    font-family: 'Poppins'; // not sure if this font worked...
     margin: 0;
     
     #bg {
@@ -154,5 +154,24 @@ body {
                 padding: $padding $padding * 4;
             }
         }
+        .button-basic {
+            border: none;
+            padding: 15px 30px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          
+          .button-yes  {
+            font-family: 'Poppins-Bold';
+            @extend .button-basic;
+            color: green;
+          }
+          
+          .button-no  {
+            font-family: 'Poppins-Bold';
+            @extend .button-basic;
+            color: red;
+          }
         }
     } 
